@@ -1,0 +1,24 @@
+<div class="container main">
+    <div class="row">
+        <div class="col-lg-8">
+            <table class="table table-bordered table-striped" [mfData]="mfData" #mf="mfDataTable">
+                <thead>
+                <tr>
+                    <th class="col1">
+                        <mfDefaultSorter by="colorName">Color Name</mfDefaultSorter>
+                    </th>
+                    <th class="col2">
+                        Color
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of mf.data">
+                    <td>{{ item.colorName }}</td>
+                    <td [ngStyle]="{ 'background': item.hexValue }"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
